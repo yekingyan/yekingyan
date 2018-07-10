@@ -56,6 +56,9 @@ def send_words():
 
 
 def send_time():
+# TODO 第一条发生在启动时，非定时
+    send_words()
+
     now_time = datetime.datetime.now()
     # 获取明天时间
     next_time = now_time + datetime.timedelta(days=+1)
@@ -74,10 +77,9 @@ def send_time():
     log(timer_start_time)
 
     # 定时器,参数为(多少时间后执行，单位为秒，执行的方法)
-    timer = Timer(timer_start_time,send_words)
+    timer = Timer(timer_start_time,send_time)
     timer.start()
 
 
 if __name__ == '__main__':
-
     send_time()
