@@ -1,12 +1,12 @@
-# python3
+#! python3
 import time
 import requests
 from wxpy import *
 from threading import Timer
 import datetime
 
-
-bot = Bot()
+#启动。在终端中显示登陆二维码
+bot = Bot(None,2,None,None,None,None)
 
 def log(*args, **kwargs):
     print('log', *args, **kwargs)
